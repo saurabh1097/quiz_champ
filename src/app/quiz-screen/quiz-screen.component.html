@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+
+    <!-- question info and index page of the questions -->
+    <div [style.backgroundColor]="red" class="col-sm-3 quiz-info curve-edge">
+      <div class="quiz-question">
+        <h2>Questions</h2>
+        <div class="circle-container">
+          <div *ngFor="let item of questions; index as i">
+            <button class="circle" (click)="changeQuestion(i)">
+              {{ i + 1 }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- question and option screen to answer the questions -->
+    <div
+      [style.backgroundColor]="blue"
+      class="col-md-9 quiz-questions curve-edge">
+      <div class="quiz-questions">
+        <h2>Question {{ questionToDisplay.index + 1 }}</h2>
+        <div>
+          <p class="question-string">{{ questionToDisplay.question }}</p>
+        </div>
+        <ul class="quiz-options">
+          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option1}}<br>
+          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option2}}<br>
+          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option3}}<br>
+          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option4}}<br>
+        </ul>
+      </div>
+
+
+      <!-- next previous and save buttons -->
+      <div class="navigators">
+        <button type="button" class="btn previous">Previous</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn previous">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn previous">Next</button>
+      </div>
+      
+
+
+
+    </div>
+
+    
+
+    
+
+
+  </div>
+</div>
