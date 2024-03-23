@@ -1,0 +1,15 @@
+.typesOfLang{
+    height: 100px;
+    width: 200px;
+    border: black solid 2px;
+    font-size: x-large;
+    word-wrap: break-word;
+}
+.quiz_options{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: center;
+}
+
+.container{
+    margin-top: 50px;
+    display: flex; justify-content: center;
+}

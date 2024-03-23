@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="quiz_options">
+    <div *ngFor="let options of quiz_options">
+      <button
+        type="button"
+        class="btn btn-outline typesOfLang"
+        [style.backgroundColor]="options.color"
+        (click)="redirectToQuiz()"
+      >
+        {{ options.lang | uppercase }}
+      </button>
+    </div>
+  </div>
+</div>

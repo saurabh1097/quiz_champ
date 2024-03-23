@@ -1,2 +1,6 @@
-just to check.
-updated from local.
+24.023.2024 
+tasks:
+    1. added navbar and icon
+    2. added all the required options on the screen
+    3. added saperate link component 
+    4. added quiz screen to show the quiz questions
