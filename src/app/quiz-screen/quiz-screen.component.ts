@@ -56,7 +56,7 @@ changeQuestion(index: number) {
     option4: "An operating system.",
     answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
     languages: "TypeScript, JavaScript",
-    index:3
+    index:4
 },
 {
   question: "What is TypeScript?",
@@ -67,7 +67,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:5
 },
 {
   question: "What is TypeScript?",
@@ -78,7 +78,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:6
 },
 {
   question: "What is TypeScript?",
@@ -89,7 +89,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:7
 },
 {
   question: "What is TypeScript?",
@@ -100,7 +100,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:8
 },
 {
   question: "What is TypeScript?",
@@ -111,7 +111,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:9
 },
 {
   question: "What is TypeScript?",
@@ -122,7 +122,7 @@ changeQuestion(index: number) {
   option4: "An operating system.",
   answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
   languages: "TypeScript, JavaScript",
-  index:3
+  index:10
 }
 ];
 questionToDisplay:Questions = this.questions[0];

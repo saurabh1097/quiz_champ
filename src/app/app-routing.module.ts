@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'quiz-options', component:QuizOptionsComponent},
   {path: 'home',component:AppComponent},
   {path: 'showLink', component:OptionsLinkComponent},
-  {path:"quiz",component:QuizScreenComponent}
+  {path:"quiz",component:QuizScreenComponent},
+  {path:"",component:OptionsLinkComponent}
 ];
 
 @NgModule({
