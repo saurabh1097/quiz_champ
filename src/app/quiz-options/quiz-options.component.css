@@ -13,5 +13,10 @@
     margin-top: 50px;
     display: flex; justify-content: center;
 }
+h1{
+    text-align:center;
+    color:rgb(119, 27, 155);
+    margin-top: 5px;
+}
 
 
