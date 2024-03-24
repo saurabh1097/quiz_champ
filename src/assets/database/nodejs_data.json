@@ -1,0 +1,114 @@
+[
+    {
+        "index": 0,
+        "question": "What is the core functionality of the `http` module in Node.js?",
+        "answer": "The `http` module in Node.js provides functionality to create an HTTP server and handle HTTP requests and responses.",
+        "option1": "The `http` module in Node.js is used to interact with the file system.",
+        "option2": "The `http` module in Node.js is used for asynchronous operations.",
+        "option3": "The `http` module in Node.js provides functionality to create an HTTP server and handle HTTP requests and responses.",
+        "option4": "The `http` module in Node.js is used for database operations.",
+        "answerExplanation": "The `http` module in Node.js is a core module that provides functionality to create an HTTP server and handle HTTP requests and responses. It allows Node.js to act as a web server, serving web pages and processing HTTP requests from clients. The `http` module's `createServer` method is commonly used to create an HTTP server that listens for incoming requests on a specified port."
+    },
+    {
+        "index": 1,
+        "question": "What is npm in the context of Node.js?",
+        "answer": "npm is the package manager for Node.js, which is used to install, manage, and share packages of reusable code.",
+        "option1": "npm is the programming language used in Node.js.",
+        "option2": "npm is the server used to host Node.js applications.",
+        "option3": "npm is the package manager for Node.js, which is used to install, manage, and share packages of reusable code.",
+        "option4": "npm is the framework used to build web applications in Node.js.",
+        "answerExplanation": "npm (Node Package Manager) is the package manager for Node.js, which is used to install, manage, and share packages of reusable code. It is a command-line utility that comes bundled with Node.js and is used by developers to install dependencies for their Node.js projects, manage project dependencies, and publish packages for others to use. npm simplifies the process of managing dependencies and sharing code, making it an essential tool for Node.js developers."
+    },
+    {
+        "index": 2,
+        "question": "What is the purpose of the `fs` module in Node.js?",
+        "answer": "The `fs` module in Node.js provides file system-related functionality, such as reading and writing files.",
+        "option1": "The `fs` module in Node.js is used for HTTP requests.",
+        "option2": "The `fs` module in Node.js is used for database operations.",
+        "option3": "The `fs` module in Node.js provides file system-related functionality, such as reading and writing files.",
+        "option4": "The `fs` module in Node.js is used for asynchronous operations.",
+        "answerExplanation": "The `fs` (File System) module in Node.js provides file system-related functionality, allowing you to work with the file system on your computer. It provides methods for creating, reading, updating, and deleting files and directories. The `fs` module is particularly useful for tasks such as reading configuration files, logging data to files, and interacting with the file system in a Node.js application."
+    },
+    {
+        "index": 3,
+        "question": "What is the purpose of the `path` module in Node.js?",
+        "answer": "The `path` module in Node.js provides utilities for working with file and directory paths.",
+        "option1": "The `path` module in Node.js is used to create HTTP servers.",
+        "option2": "The `path` module in Node.js is used for database operations.",
+        "option3": "The `path` module in Node.js provides utilities for working with file and directory paths.",
+        "option4": "The `path` module in Node.js is used for asynchronous operations.",
+        "answerExplanation": "The `path` module in Node.js provides utilities for working with file and directory paths. It allows you to manipulate file paths in a platform-independent way, handling differences in path formats between different operating systems (such as Windows, macOS, and Linux). The `path` module's methods can be used to normalize paths, join paths together, extract the file name or extension from a path, and more."
+    },
+    {
+        "index": 4,
+        "question": "What is the role of the `events` module in Node.js?",
+        "answer": "The `events` module in Node.js provides an event-driven architecture, allowing objects to emit and listen for events.",
+        "option1": "The `events` module in Node.js is used to interact with the file system.",
+        "option2": "The `events` module in Node.js is used for HTTP requests.",
+        "option3": "The `events` module in Node.js provides an event-driven architecture, allowing objects to emit and listen for events.",
+        "option4": "The `events` module in Node.js is used for asynchronous operations.",
+        "answerExplanation": "The `events` module in Node.js provides an event-driven architecture, allowing objects to emit named events that cause functions (listeners) to be called. This module is particularly useful for building applications that need to respond to various events, such as user input, file system events, network requests, and more. By using the `events` module, developers can create applications that are more responsive and modular, with different parts of the application communicating through events."
+    },{
+        "index": 5,
+        "question": "What is the event loop in Node.js, and how does it enable non-blocking I/O operations?",
+        "answer": "The event loop is a mechanism in Node.js that allows asynchronous operations to be executed efficiently. It continuously checks the event queue for new events and executes callback functions associated with these events. This enables Node.js to handle multiple I/O operations concurrently without blocking the execution of other code.",
+        "option1": "The event loop is a mechanism in Node.js that allows synchronous operations to be executed efficiently.",
+        "option2": "The event loop is a mechanism in Node.js that blocks the execution of asynchronous operations.",
+        "option3": "The event loop is a mechanism in Node.js that manages database connections.",
+        "option4": "The event loop is a mechanism in Node.js that enables multi-threading."
+    },
+    {
+        "index": 6,
+        "question": "Explain the concept of streams in Node.js. How are they different from traditional I/O operations?",
+        "answer": "Streams in Node.js are objects that allow you to read or write data continuously. They enable efficient processing of large amounts of data by handling chunks of data at a time, rather than loading the entire data into memory. This is different from traditional I/O operations, which often load the entire data into memory before processing, leading to potential memory issues with large datasets.",
+        "option1": "Streams in Node.js are used for blocking I/O operations.",
+        "option2": "Streams in Node.js handle data in smaller chunks, making them less efficient for large datasets.",
+        "option3": "Streams in Node.js are synchronous.",
+        "option4": "Streams in Node.js are similar to traditional I/O operations."
+    },
+    {
+        "index": 7,
+        "question": "What is middleware in the context of Express.js? How is it used in building web applications?",
+        "answer": "Middleware in Express.js is a function that has access to the request and response objects in an HTTP request-response cycle. It can perform tasks such as modifying the request or response objects, terminating the request-response cycle, or calling the next middleware function in the stack. Middleware is used to add functionality to an Express.js application, such as logging, authentication, or error handling.",
+        "option1": "Middleware in Express.js is a function that is executed after the response is sent to the client.",
+        "option2": "Middleware in Express.js is used to define routes in a web application.",
+        "option3": "Middleware in Express.js is used to handle database operations.",
+        "option4": "Middleware in Express.js is a function that has access to the request and response objects in an HTTP request-response cycle."
+    },
+    {
+        "index": 8,
+        "question": "Explain the concept of clustering in Node.js. How does it improve the performance of Node.js applications?",
+        "answer": "Clustering in Node.js allows you to take advantage of multi-core systems by spawning multiple instances of your application (workers) that share the same port. This enables your application to handle more concurrent connections and improve performance by utilizing the available CPU cores. Clustering is particularly useful for scaling Node.js applications and ensuring they can handle a large number of requests.",
+        "option1": "Clustering in Node.js is used to run multiple Node.js applications on the same port.",
+        "option2": "Clustering in Node.js is a technique for handling database operations.",
+        "option3": "Clustering in Node.js is a method for creating child processes.",
+        "option4": "Clustering in Node.js allows you to take advantage of multi-core systems by spawning multiple instances of your application (workers) that share the same port."
+    },
+    {
+        "index": 9,
+        "question": "What are the different types of modules in Node.js? How are they used in building modular applications?",
+        "answer": "Node.js supports three types of modules: Core Modules (built-in modules), Local Modules (modules created by the user), and Third-party Modules (modules provided by external sources, usually installed via npm). These modules help in organizing code into smaller, reusable units, making it easier to maintain and scale applications. Core Modules provide essential functionality, while Local and Third-party Modules can be used to add custom or external functionality to an application.",
+        "option1": "Node.js supports two types of modules: Core Modules (built-in modules) and Third-party Modules (modules provided by external sources, usually installed via npm).",
+        "option2": "Node.js supports four types of modules: Core Modules (built-in modules), Local Modules (modules created by the user), Third-party Modules (modules provided by external sources, usually installed via npm), and Global Modules (modules installed globally using npm).",
+        "option3": "Node.js supports two types of modules: Local Modules (modules created by the user) and Global Modules (modules installed globally using npm).",
+        "option4": "Node.js supports three types of modules: Core Modules (built-in modules), Local Modules (modules created by the user), and External Modules (modules provided by external sources, usually installed via npm)."
+    },
+    {
+        "index": 10,
+        "question": "What is the purpose of the `Buffer` class in Node.js? How is it used in handling binary data?",
+        "answer": "The `Buffer` class in Node.js is used to handle binary data. It provides methods for creating, reading, and manipulating binary data, such as converting between different encodings (e.g., ASCII, UTF-8) and slicing buffers. The `Buffer` class is particularly useful when working with file systems, network operations, and other scenarios where binary data needs to be processed.",
+        "option1": "The `Buffer` class in Node.js is used to handle HTTP requests.",
+        "option2": "The `Buffer` class in Node.js is used to handle JSON data.",
+        "option3": "The `Buffer` class in Node.js is used to handle binary data.",
+        "option4": "The `Buffer` class in Node.js is used to handle string data."
+    },
+    {
+        "index": 11,
+        "question": "Explain the concept of Promises in Node.js. How do they help in handling asynchronous operations?",
+        "answer": "Promises in Node.js are objects that represent the eventual completion or failure of an asynchronous operation. They allow you to handle asynchronous code in a more readable and manageable way by chaining methods to handle success and failure conditions. Promises help avoid the 'callback hell' problem often associated with asynchronous code.",
+        "option1": "Promises in Node.js are used to handle synchronous operations.",
+        "option2": "Promises in Node.js are used to handle database operations.",
+        "option3": "Promises in Node.js are objects that represent the eventual completion or failure of an asynchronous operation.",
+        "option4": "Promises in Node.js are used to create child processes."
+    }
+]

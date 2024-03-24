@@ -1,129 +1,89 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Questions } from '../models/Questions';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FetchingService } from '../services/fetching.service';
 
 @Component({
   selector: 'app-quiz-screen',
   templateUrl: './quiz-screen.component.html',
-  styleUrls: ['./quiz-screen.component.css']
+  styleUrls: ['./quiz-screen.component.css'],
 })
-export class QuizScreenComponent {
-changeQuestion(index: number) {
-  this.questionToDisplay = this.questions[index];
-//throw new Error('Method not implemented.');
-}
-  red:string="#d6a6fc"
-  blue="white"
-  questions: Questions[] = [
-    {
-        question: "What is Angular?",
-        answer: "Angular is a web application framework.",
-        option1: "A programming language.",
-        option2: "A database management system.",
-        option3: "A web application framework.",
-        option4: "An operating system.",
-        answerExplanation: "Angular is a framework for building client-side web applications.",
-        languages: "TypeScript, JavaScript",
-        index:0
-    },
-    {
-        question: "What is TypeScript?",
-        answer: "TypeScript is a superset of JavaScript.",
-        option1: "A programming language.",
-        option2: "A database management system.",
-        option3: "A web application framework.",
-        option4: "An operating system.",
-        answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-        languages: "TypeScript, JavaScript",
-        index:1
-    },
-    {
-      question: "What is TypeScript?",
-      answer: "TypeScript is a superset of JavaScript.",
-      option1: "A programming language.",
-      option2: "A database management system.",
-      option3: "A web application framework.",
-      option4: "An operating system.",
-      answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-      languages: "TypeScript, JavaScript",
-      index:3
-  },
-  {
-    question: "What is TypeScript?",
-    answer: "TypeScript is a superset of JavaScript.",
-    option1: "A programming language.",
-    option2: "A database management system.",
-    option3: "A web application framework.",
-    option4: "An operating system.",
-    answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-    languages: "TypeScript, JavaScript",
-    index:4
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:5
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:6
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:7
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:8
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:9
-},
-{
-  question: "What is TypeScript?",
-  answer: "TypeScript is a superset of JavaScript.",
-  option1: "A programming language.",
-  option2: "A database management system.",
-  option3: "A web application framework.",
-  option4: "An operating system.",
-  answerExplanation: "TypeScript is a statically typed language that compiles to plain JavaScript.",
-  languages: "TypeScript, JavaScript",
-  index:10
-}
-];
-questionToDisplay:Questions = this.questions[0];
+export class QuizScreenComponent implements OnInit, OnDestroy {
+
+  red: string = '#d6a6fc';
+  blue = 'white';
+  questions: Questions[] = [];
+  questionToDisplay: Questions = new Questions();
+  optionSelected: string = '';
+  path: string = '';
+  optionClicked:string=""
+  optionStored:Map<string,string> = new Map<string,string>();
+
+  constructor(
+    private activeRouter: ActivatedRoute,
+    private dataService: FetchingService,
+    private router:Router
+  ) {}
+  ngOnDestroy(): void {
+    alert('sure you want to exit....');
+  }
+  ngOnInit(): void {
+    this.activeRouter.queryParams.subscribe((params) => {
+      this.optionSelected = params['selectedOption'];
+      console.log(this.optionSelected);
+    });
+
+    this.createPath(this.optionSelected);
+    this.dataService.getData(this.path).subscribe((data) => {
+      this.questions = data;
+      this.questionToDisplay = this.questions[0];
+      console.log(data);
+    });
+  }
+
+  createPath(lang: string) {
+    this.path = '../assets/database/' + lang + '_data.json';
+  }
+
+  changeQuestion(index: number) {
+    this.questionToDisplay = this.questions[index];
+  }
+
+  nextQuestion() {
+    this.optionClicked=""
+    if(this.questions.length -1 >= this.questionToDisplay.index+1){
+      this.questionToDisplay = this.questions[this.questionToDisplay.index+1];
+      this.chechIsClicked();
+    }
+  }
+  saveAnswer() {
+    if(this.optionClicked.length > 0){
+      this.optionStored.set(JSON.stringify(this.questionToDisplay.index),this.optionClicked);
+      this.nextQuestion();
+    }else{
+      alert("please select the option to save.")
+    }
+    console.log("ans selected : ",this.optionStored);
+  }
+  previousQuestion() {
+    if(0 <= this.questionToDisplay.index-1){
+      this.questionToDisplay = this.questions[this.questionToDisplay.index-1];
+      this.chechIsClicked();
+    }
+  }
+
+  chechIsClicked(){
+    if(this.optionStored.has(this.questionToDisplay.index.toString())){
+      let value = this.optionStored.get(this.questionToDisplay.index.toString())
+      if(value){
+        this.optionClicked = value
+      }else{
+        this.optionClicked = ""
+      }
+    }
+  }
+
+  finishTest() {
+    this.router.navigate(["result"])
+  }
 }

@@ -12,12 +12,12 @@ export class QuizOptionsComponent {
   constructor(private router:Router){
 
   }
-  redirectToQuiz() {
-    this.router.navigate(['/quiz']);
+  redirectToQuiz(lang:string) {
+    this.router.navigate(['/quiz'],{queryParams: {"selectedOption":lang}});
   }
   quiz_options: langWithColor[] = [
     { lang: 'java', color: 'yellow' },
-    { lang: 'node', color: 'green' },
+    { lang: 'nodejs', color: 'green' },
     { lang: 'python', color: 'blue' },
     { lang: 'ruby', color: 'red' },
     { lang: 'typescript', color: 'lightblue' },

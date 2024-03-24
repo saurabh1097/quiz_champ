@@ -13,6 +13,7 @@
           </div>
         </div>
       </div>
+      
     </div>
 
 
@@ -26,19 +27,23 @@
           <p class="question-string">{{ questionToDisplay.question }}</p>
         </div>
         <ul class="quiz-options">
-          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option1}}<br>
-          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option2}}<br>
-          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option3}}<br>
-          <input type="radio" name="q1" value="a" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option4}}<br>
+          <input type="radio" name="q1" value="1" [(ngModel)]="optionClicked" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option1}}<br>
+          <input type="radio" name="q2" value="2" [(ngModel)]="optionClicked" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option2}}<br>
+          <input type="radio" name="q3" value="3" [(ngModel)]="optionClicked" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option3}}<br>
+          <input type="radio" name="q4" value="4" [(ngModel)]="optionClicked" />&nbsp;&nbsp;&nbsp;{{questionToDisplay.option4}}<br>
         </ul>
       </div>
 
 
       <!-- next previous and save buttons -->
-      <div class="navigators">
-        <button type="button" class="btn previous">Previous</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn previous">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn previous">Next</button>
+      <div class="navigators container">
+        <button type="button" (click)="previousQuestion()" class="btn previous">Previous</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" (click)="saveAnswer()" class="btn previous">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" (click)="nextQuestion()" class="btn previous">Next</button>
+      </div>
+
+      <div class="container">
+        <button (click)="finishTest()" class="btn finish-btn">Finish Test</button>
       </div>
       
 

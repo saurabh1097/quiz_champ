@@ -5,7 +5,7 @@
         type="button"
         class="btn btn-outline typesOfLang"
         [style.backgroundColor]="options.color"
-        (click)="redirectToQuiz()"
+        (click)="redirectToQuiz(options.lang)"
       >
         {{ options.lang | uppercase }}
       </button>

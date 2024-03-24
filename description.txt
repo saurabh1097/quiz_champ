@@ -1,6 +1,14 @@
-24.023.2024 
+24.03.2024 
 tasks:
     1. added navbar and icon
     2. added all the required options on the screen
     3. added saperate link component 
     4. added quiz screen to show the quiz questions
+
+25-03-2024
+task:
+    1. created files for using them as data base
+    2. added service to fetch the data and now showing the actual data
+    3. added previous,next and save functionality for quiz
+    4. created finish test button
+    5. created result component as well.

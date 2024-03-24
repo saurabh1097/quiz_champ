@@ -6,8 +6,18 @@
 }
 
 .quiz-info {
- height: 500px;
  justify-content: center;
+}
+
+.finish-btn{
+  margin-left: 750px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: red;
+  justify-content: center;
 }
 
 .quiz-questions {
@@ -87,6 +97,6 @@
 }
 
 .navigators{
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 100px;
 }

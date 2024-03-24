@@ -1,0 +1,168 @@
+[
+    {
+        "question": "What is the output of the following Python code snippet: `[x**2 for x in range(10) if x%2 == 0]`?",
+        "answer": "[0, 4, 16, 36, 64]",
+        "option1": "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]",
+        "option2": "[0, 4, 16, 36, 64]",
+        "option3": "[1, 4, 9, 16, 25, 36, 49, 64, 81]",
+        "option4": "[0, 2, 4, 6, 8]",
+        "answerExplanation": "This is a list comprehension that squares even numbers in the range from 0 to 9.",
+        "languages": "Python",
+        "index": 1
+    },
+    {
+        "question": "What is the purpose of Python's `__init__` method in a class?",
+        "answer": "It is a special method in Python classes, used for initializing new objects of the class.",
+        "option1": "It is used to initialize static variables of the class.",
+        "option2": "It is used to include comments about the class.",
+        "option3": "It is used to import modules required by the class.",
+        "option4": "It is a special method in Python classes, used for initializing new objects of the class.",
+        "answerExplanation": "The `__init__` method in Python is similar to constructors in other object-oriented programming languages. It is automatically called when an object of the class is created.",
+        "languages": "Python",
+        "index": 2
+    },
+    {
+        "question": "What does the `yield` keyword do in Python?",
+        "answer": "It is used in a function like a return statement but it returns a generator.",
+        "option1": "It is used to pause and resume a function.",
+        "option2": "It is used in a function like a return statement but it returns a generator.",
+        "option3": "It is used to indicate the end of a function.",
+        "option4": "It is used to loop over items in a list.",
+        "answerExplanation": "The `yield` keyword in Python is used in a function to transform it into a generator. The function will return a generator object. When the function is called, the execution starts from where it was left off.",
+        "languages": "Python",
+        "index": 3
+    },
+    {
+        "question": "What is a metaclass in Python?",
+        "answer": "A metaclass is the class of a class, or a class that defines the behavior of a class.",
+        "option1": "A metaclass is a class used for creating other classes.",
+        "option2": "A metaclass is the superclass of all classes in Python.",
+        "option3": "A metaclass is the class of a class, or a class that defines the behavior of a class.",
+        "option4": "A metaclass is a class that contains metadata about other classes.",
+        "answerExplanation": "In Python, everything is an object, including classes. The class of a class is called a metaclass. Metaclasses are most commonly used as class factories.",
+        "languages": "Python",
+        "index": 4
+    },
+    {
+        "question": "What is the difference between `deepcopy()` and `copy()` in Python?",
+        "answer": "`copy()` creates a shallow copy and `deepcopy()` creates a deep copy. This means that changes to the original object will affect the copied object with `copy()`, but not with `deepcopy()`.",
+        "option1": "`copy()` creates a copy with a different memory address, while `deepcopy()` creates a copy with the same memory address.",
+        "option2": "`copy()` creates a copy of the object's reference, while `deepcopy()` creates a copy of the object itself.",
+        "option3": "`copy()` creates a deep copy and `deepcopy()` creates a shallow copy.",
+        "option4": "`copy()` creates a shallow copy and `deepcopy()` creates a deep copy. This means that changes to the original object will affect the copied object with `copy()`, but not with `deepcopy()`.",
+        "answerExplanation": "In Python, `copy()` is used to create a new copy of an object. If the original object changes, the copied object will also change. `deepcopy()`, on the other hand, creates a new copy of the object and all its sub-objects, so changes to the original object do not affect the copied object.",
+        "languages": "Python",
+        "index": 5
+    },
+    {
+        "question": "What is the GIL (Global Interpreter Lock) in Python?",
+        "answer": "The GIL is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once.",
+        "option1": "A tool for memory management in Python.",
+        "option2": "A Python module for parallel processing.",
+        "option3": "The GIL is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once.",
+        "option4": "A Python built-in function for sorting lists.",
+        "answerExplanation": "The Global Interpreter Lock, or GIL, in Python is a mutex (or a lock) that allows only one thread to execute at a time in a single process.",
+        "languages": "Python",
+        "index": 6
+    },
+    {
+        "question": "What is the difference between `range` and `xrange` in Python 2?",
+        "answer": "`range` returns a list while `xrange` returns an xrange object, which is an iterator that generates the numbers on demand.",
+        "option1": "`range` and `xrange` are the same.",
+        "option2": "`range` returns a list while `xrange` returns an xrange object, which is an iterator that generates the numbers on demand.",
+        "option3": "`range` is used for floating point numbers while `xrange` is used for integers.",
+        "option4": "`range` is a built-in function in Python 3, while `xrange` is a built-in function in Python 2.",
+        "answerExplanation": "`range` and `xrange` are both used to generate a list of numbers. However, `range` returns a list, which can consume a lot of memory if the range is large, while `xrange` returns an xrange object, which is an iterator that generates the numbers on demand, using less memory.",
+        "languages": "Python",
+        "index": 7
+    },
+    {
+        "question": "What does the `*args` and `**kwargs` syntax do in Python functions?",
+        "answer": "`*args` allows for any number of positional arguments, and `**kwargs` allows for any number of keyword arguments.",
+        "option1": "`*args` and `**kwargs` are used to declare global variables.",
+        "option2": "`*args` allows for any number of positional arguments, and `**kwargs` allows for any number of keyword arguments.",
+        "option3": "`*args` is used for function overloading, and `**kwargs` is used for operator overloading.",
+        "option4": "`*args` is used to unpack lists, and `**kwargs` is used to unpack dictionaries.",
+        "answerExplanation": "`*args` and `**kwargs` are special syntax in Python for passing a variable number of arguments to a function. `*args` is used to send a non-keyworded variable length argument list to the function, and `**kwargs` is used to pass keyworded variable length of arguments to a function.",
+        "languages": "Python",
+        "index": 8
+    },
+    {
+        "question": "What is a decorator in Python?",
+        "answer": "A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.",
+        "option1": "A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.",
+        "option2": "A decorator is a type of Python class that is used to create graphical user interfaces.",
+        "option3": "A decorator is a Python package used for web development.",
+        "option4": "A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it.",
+        "answerExplanation": "Decorators in Python are essentially functions that add functionality to an existing function in Python without changing the structure of the function itself. They are a very powerful tool in Python as they allow you to modify the behavior of a function or class.",
+        "languages": "Python",
+        "index": 9
+    },
+    {
+        "question": "What is the use of the `pass` statement in Python?",
+        "answer": "The `pass` statement in Python is used as a placeholder for future code. When the `pass` statement is executed, nothing happens, but you avoid getting an error when empty code is not allowed.",
+        "option1": "The `pass` statement is used to skip a loop iteration.",
+        "option2": "The `pass` statement is used to terminate a program.",
+        "option3": "The `pass` statement in Python is used as a placeholder for future code. When the `pass` statement is executed, nothing happens, but you avoid getting an error when empty code is not allowed.",
+        "option4": "The `pass` statement is used to pass control from one function to another.",
+        "answerExplanation": "The `pass` statement in Python is a null operation. When it is executed, nothing happens. It is useful as a placeholder when a statement is required syntactically, but no code needs to be executed.",
+        "languages": "Python",
+        "index": 10
+    },
+        {
+            "question": "What is the difference between `__str__` and `__repr__` methods in Python?",
+            "answer": "`__str__` is a readable representation of an object and `__repr__` is a complete representation of an object.",
+            "option1": "`__str__` is used for debugging and `__repr__` is used for displaying to end-users.",
+            "option2": "`__str__` is a readable representation of an object and `__repr__` is a complete representation of an object.",
+            "option3": "`__str__` is used for arithmetic operations and `__repr__` is used for comparison operations.",
+            "option4": "`__str__` is used for string formatting and `__repr__` is used for regular expressions.",
+            "answerExplanation": "`__str__` and `__repr__` are both methods to represent objects in Python. `__str__` is meant to provide a display-friendly representation, while `__repr__` should output all information about the object, often used for debugging.",
+            "languages": "Python",
+            "index": 11
+        },
+        {
+            "question": "What is the purpose of the `__name__` variable in Python?",
+            "answer": "`__name__` is a built-in variable in Python, which evaluates to the name of the current module. Thus, it can be used to check whether the current script is being run on its own or being imported somewhere else.",
+            "option1": "`__name__` is used to define the name of a class or function.",
+            "option2": "`__name__` is a built-in variable in Python, which evaluates to the name of the current module. Thus, it can be used to check whether the current script is being run on its own or being imported somewhere else.",
+            "option3": "`__name__` is used to store the version of the Python interpreter.",
+            "option4": "`__name__` is used to store the name of the user currently running the script.",
+            "answerExplanation": "In Python, `__name__` is a special built-in variable. When a Python interpreter reads a source file, it first sets the `__name__` variable to `__main__` if the module being run, or to the module's name if it is being imported. This can be used to ensure that certain code is only run when the module is run directly, and not when it is imported as a module.",
+            "languages": "Python",
+            "index": 12
+        },
+        {
+            "question": "What is a lambda function in Python?",
+            "answer": "A lambda function is a small anonymous function that is defined with the `lambda` keyword, and can take any number of arguments, but can only have one expression.",
+            "option1": "A lambda function is a special function that is defined without a name.",
+            "option2": "A lambda function is a small anonymous function that is defined with the `lambda` keyword, and can take any number of arguments, but can only have one expression.",
+            "option3": "A lambda function is a function that is defined inside another function.",
+            "option4": "A lambda function is a function that is defined with the `def` keyword.",
+            "answerExplanation": "A lambda function in Python is a small anonymous function that is defined with the `lambda` keyword. It can take any number of arguments, but can only have one expression. Lambda functions are used when a simple, small function is needed for a short period of time.",
+            "languages": "Python",
+            "index": 13
+        },
+        {
+            "question": "What is the use of the `zip` function in Python?",
+            "answer": "The `zip` function takes in iterables as arguments and returns an iterator that generates tuples based on the iterables.",
+            "option1": "The `zip` function is used to compress files in Python.",
+            "option2": "The `zip` function is used to merge two lists into a dictionary.",
+            "option3": "The `zip` function is used to unzip files in Python.",
+            "option4": "The `zip` function takes in iterables as arguments and returns an iterator that generates tuples based on the iterables.",
+            "answerExplanation": "The `zip` function in Python takes in iterables as arguments, and returns an iterator that generates tuples based on the iterables. Each tuple contains the i-th element from each of the argument sequences or iterables.",
+            "languages": "Python",
+            "index": 14
+        },
+        {
+            "question": "What is the difference between `is` and `==` in Python?",
+            "answer": "`is` checks if both the variables point to the same object whereas `==` checks if the values for the two variables are the same.",
+            "option1": "`is` checks if both the variables point to the same object whereas `==` checks if the values for the two variables are the same.",
+            "option2": "`is` is used for value comparison and `==` is used for reference comparison.",
+            "option3": "`is` and `==` are the same in Python.",
+            "option4": "`is` is used for type checking and `==` is used for value checking.",
+            "answerExplanation": "In Python, `is` and `==` are used for comparison. `is` checks if both the variables point to the same object, i.e., it checks for object identity. `==`, on the other hand, checks if the values for the two variables are the same, not if they refer to the same object.",
+            "languages": "Python",
+            "index": 15
+        }
+    ]
+    

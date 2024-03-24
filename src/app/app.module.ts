@@ -7,6 +7,9 @@ import { ButtonColorPipe } from './pipes/button-color.pipe';
 import { QuizOptionsComponent } from './quiz-options/quiz-options.component';
 import { OptionsLinkComponent } from './options-link/options-link.component';
 import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ResultScreenComponent } from './result-screen/result-screen.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
     ButtonColorPipe,
     QuizOptionsComponent,
     OptionsLinkComponent,
-    QuizScreenComponent
+    QuizScreenComponent,
+    ResultScreenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
