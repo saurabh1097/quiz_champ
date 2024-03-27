@@ -8,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TimerComponent implements OnInit{
 
   @Output() timeOver:EventEmitter<Boolean> = new EventEmitter<Boolean>();
+  timeLeft: number = 3600;
+  isTimeOver: boolean=false;
 
 
   ngOnInit(): void {
@@ -16,8 +18,7 @@ export class TimerComponent implements OnInit{
 
   
 
-  timeLeft: number = 3600;
-  isTimeOver: boolean=false;
+
   startTimer() {
     const interval = setInterval(() => {
       if (this.timeLeft > 0) {

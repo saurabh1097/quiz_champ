@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResultScreenComponent } from './result-screen/result-screen.component';
 import { FormsModule } from '@angular/forms';
 import { TimerComponent } from './quiz-screen/timer/timer.component';
+import { PopupComponent } from './popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { TimerComponent } from './quiz-screen/timer/timer.component';
     OptionsLinkComponent,
     QuizScreenComponent,
     ResultScreenComponent,
-    TimerComponent
+    TimerComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

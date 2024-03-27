@@ -2,6 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Questions } from '../models/Questions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FetchingService } from '../services/fetching.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-quiz-screen',
@@ -25,11 +29,13 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   constructor(
     private activeRouter: ActivatedRoute,
     private dataService: FetchingService,
-    private router:Router
+    private router:Router,
+    private dialog: MatDialog
   ) {}
   ngOnDestroy(): void {
     if(!this.isTimeOver){
-      alert('sure you want to exit....');
+       //this.openConfirmation()
+       //this.openConfirmationDialog()
     }
     
   }
@@ -54,6 +60,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
 
   changeQuestion(index: number) {
     this.questionToDisplay = this.questions[index];
+    this.chechIsClicked();
   }
 
   nextQuestion() {
@@ -63,6 +70,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
       this.chechIsClicked();
     }
   }
+
   saveAnswer() {
     if(this.optionClicked.length > 0){
       this.optionStored.set(JSON.stringify(this.questionToDisplay.index),this.optionClicked);
@@ -93,16 +101,66 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   }
 
   finishTest() {
-    this.router.navigate(["result"])
+    if(!this.isTimeOver){
+      this.openConfirmationDialog()
+    }else{
+      this.timeOutMessage()
+      this.router.navigate(["result"])
+    }
+    
   }
 
   timerCheck(isTimeOut: any) {
     console.log(isTimeOut);
-    
     if(isTimeOut){
       this.isTimeOver = true;
       this.finishTest()
     }
   }
+
+
+
+  //confirmation code 
+  openConfirmation(): void {
+    const dialogRef = this.dialog.open(PopupComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // User clicked 'Proceed'
+        console.log('Proceed with action');
+      } else {
+        // User clicked 'Cancel' or closed the dialog
+        console.log('Cancelled action');
+      }
+    });
+  }
+
+  openConfirmationDialog(): void {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to end the test!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes!',
+      cancelButtonText: 'No!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(["result"])
+        // Perform the action you want to confirm here
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        
+      }
+    });
+  }
+
+
+  timeOutMessage(): void {
+    Swal.fire('OOPS', 'Test time is over!', 'success');
+  }
+  
+
+
+  
 
 }
