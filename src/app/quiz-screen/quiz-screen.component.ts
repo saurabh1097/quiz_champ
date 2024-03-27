@@ -10,6 +10,7 @@ import { FetchingService } from '../services/fetching.service';
 })
 export class QuizScreenComponent implements OnInit, OnDestroy {
 
+
   red: string = '#d6a6fc';
   blue = 'white';
   questions: Questions[] = [];
@@ -19,7 +20,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   optionClicked:string=""
   optionStored:Map<string,string> = new Map<string,string>();
   
-  timer:string= "00:20:17";
+  isTimeOver:boolean=false;
 
   constructor(
     private activeRouter: ActivatedRoute,
@@ -27,7 +28,10 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     private router:Router
   ) {}
   ngOnDestroy(): void {
-    alert('sure you want to exit....');
+    if(!this.isTimeOver){
+      alert('sure you want to exit....');
+    }
+    
   }
   ngOnInit(): void {
     this.activeRouter.queryParams.subscribe((params) => {
@@ -41,6 +45,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
       this.questionToDisplay = this.questions[0];
       console.log(data);
     });
+
   }
 
   createPath(lang: string) {
@@ -90,4 +95,14 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   finishTest() {
     this.router.navigate(["result"])
   }
+
+  timerCheck(isTimeOut: any) {
+    console.log(isTimeOut);
+    
+    if(isTimeOut){
+      this.isTimeOver = true;
+      this.finishTest()
+    }
+  }
+
 }

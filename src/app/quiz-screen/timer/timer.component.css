@@ -1,0 +1,10 @@
+.test-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top:5px; 
+  }

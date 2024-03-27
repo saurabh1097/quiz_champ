@@ -10,6 +10,7 @@ import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultScreenComponent } from './result-screen/result-screen.component';
 import { FormsModule } from '@angular/forms';
+import { TimerComponent } from './quiz-screen/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     QuizOptionsComponent,
     OptionsLinkComponent,
     QuizScreenComponent,
-    ResultScreenComponent
+    ResultScreenComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
