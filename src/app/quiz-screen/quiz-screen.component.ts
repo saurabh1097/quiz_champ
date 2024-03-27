@@ -5,6 +5,7 @@ import { FetchingService } from '../services/fetching.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import Swal from 'sweetalert2';
+import { DataShareService } from '../services/data-share.service';
 
 
 @Component({
@@ -30,14 +31,14 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     private activeRouter: ActivatedRoute,
     private dataService: FetchingService,
     private router:Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private dataShare:DataShareService,
   ) {}
   ngOnDestroy(): void {
-    if(!this.isTimeOver){
-       //this.openConfirmation()
-       //this.openConfirmationDialog()
-    }
-    
+    this.dataShare.setQuestionList([]);
+    this.dataShare.setSavedData(new Map<string,string>());
+    this.dataShare.setQuestionList(this.questions);
+    this.dataShare.setSavedData(this.optionStored);
   }
   ngOnInit(): void {
     this.activeRouter.queryParams.subscribe((params) => {
@@ -49,7 +50,6 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     this.dataService.getData(this.path).subscribe((data) => {
       this.questions = data;
       this.questionToDisplay = this.questions[0];
-      console.log(data);
     });
 
   }

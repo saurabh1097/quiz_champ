@@ -7,8 +7,18 @@ import { Questions } from '../models/Questions';
 })
 export class DataShareService {
 
-  private dataSubject = new BehaviorSubject<Questions[]>([]);
-  public data$ = this.dataSubject.asObservable();
+  private questionList = new BehaviorSubject<Questions[]>([]);
+  private savedData = new BehaviorSubject<Map<string,string>>(new Map<string,string>())
+  public $question = this.questionList.asObservable();
+  public $savedData = this.savedData.asObservable();
 
   constructor() { }
+
+  setQuestionList(list:Questions[]){
+    this.questionList.next(list);
+  }
+
+  setSavedData(data:Map<string,string>){
+    this.savedData.next(data);
+  }
 }
