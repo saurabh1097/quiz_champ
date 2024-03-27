@@ -13,9 +13,19 @@ task:
     4. created finish test button
     5. created result component as well.
 
+28-03-2024
+tasks:
+    1. popup is added.
+    2. timer is working 
+    3. finish button working properly.
+    4. service is created to share the data for the results.
+    5. calculate result is in the progress.
+
 
 
 tasks for future:
-    1. fix the previous button bug.
-    2. add timer on the screen.
-    3. add result functionality.
+    1. quiz description before jumping on to the quiz.
+    2. take email before the test start
+    3. send the result via mail.
+    4. question circle changes color for saved, visited, yet to visit etc.
+    5. implement security on urls.
