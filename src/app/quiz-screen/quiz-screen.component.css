@@ -1,15 +1,15 @@
 .quiz-container {
   display: flex;
   border-radius: 10px; /* Add border-radius for curved edges */
- 
+
   overflow: hidden; /* Ensure content inside the container doesn't overflow */
 }
 
 .quiz-info {
- justify-content: center;
+  justify-content: center;
 }
 
-.finish-btn{
+.finish-btn {
   margin-left: 750px;
   margin-bottom: 20px;
   display: flex;
@@ -23,7 +23,7 @@
 .quiz-questions {
 }
 
-.curve-edge{
+.curve-edge {
   border-top-left-radius: 10px; /* Curved top-left corner */
   border-bottom-left-radius: 10px; /* Curved bottom-left corner */
   border-top-right-radius: 10px; /* Curved top-right corner */
@@ -31,18 +31,11 @@
 }
 
 .quiz-questions div {
-  
 }
 
-
-
-
-
-.container{
+.container {
   margin-top: 50px;
-  
 }
-
 
 /* for circles of options */
 .circle-container {
@@ -63,11 +56,9 @@
   font-weight: bold;
 }
 
-
 /* question stirng property settings */
 
 .quiz-questions {
-  
   border-radius: 10px;
   padding: 20px;
 }
@@ -86,17 +77,31 @@
   font-size: 16px;
 }
 
-
 /* navigation buttons */
-.previous{
+.previous {
   background-color: #ad32fc;
 }
 
-.btn{
+.btn {
   width: 150px;
 }
 
-.navigators{
+.navigators {
   margin-top: 50px;
   margin-left: 100px;
+}
+
+.main-window {
+  margin-top: 10px;
+}
+
+.test-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  margin: 0 auto;
+  background-color: white;
+  margin-top:5px; 
 }

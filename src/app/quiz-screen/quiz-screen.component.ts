@@ -18,6 +18,8 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   path: string = '';
   optionClicked:string=""
   optionStored:Map<string,string> = new Map<string,string>();
+  
+  timer:string= "00:20:17";
 
   constructor(
     private activeRouter: ActivatedRoute,

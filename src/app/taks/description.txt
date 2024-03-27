@@ -12,3 +12,10 @@ task:
     3. added previous,next and save functionality for quiz
     4. created finish test button
     5. created result component as well.
+
+
+
+tasks for future:
+    1. fix the previous button bug.
+    2. add timer on the screen.
+    3. add result functionality.
