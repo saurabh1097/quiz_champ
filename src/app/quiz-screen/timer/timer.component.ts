@@ -16,7 +16,7 @@ export class TimerComponent implements OnInit{
 
   
 
-  timeLeft: number = 5;
+  timeLeft: number = 3600;
   isTimeOver: boolean=false;
   startTimer() {
     const interval = setInterval(() => {
