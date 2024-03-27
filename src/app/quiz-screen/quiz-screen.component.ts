@@ -82,6 +82,8 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
       }else{
         this.optionClicked = ""
       }
+    }else{
+      this.optionClicked = ""
     }
   }
 
