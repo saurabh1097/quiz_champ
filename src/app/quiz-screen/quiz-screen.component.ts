@@ -33,6 +33,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     private router:Router,
     private dialog: MatDialog,
     private dataShare:DataShareService,
+
   ) {}
   ngOnDestroy(): void {
     this.dataShare.setQuestionList([]);
@@ -43,8 +44,10 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.activeRouter.queryParams.subscribe((params) => {
       this.optionSelected = params['selectedOption'];
+      this.dataShare.setLanguage(this.optionSelected);
       console.log(this.optionSelected);
     });
+    
 
     this.createPath(this.optionSelected);
     this.dataService.getData(this.path).subscribe((data) => {

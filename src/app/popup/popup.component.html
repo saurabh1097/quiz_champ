@@ -1,36 +1,43 @@
-<!-- confirmation-modal.component.html -->
-<p>working</p>
 <div class="container">
   <div
-    class="modal fade"
-    id="confirmationModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="confirmationModalLabel"
-    aria-hidden="true"
+    id="carouselExampleSlidesOnly"
+    class="carousel slide"
+    data-ride="carousel"
   >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div>
+          <h1>{{ lang.languageSelected | uppercase }} QUIZ</h1>
+          <h2><p>Description:</p></h2>
+
+          <div class="paragraph" *ngIf="lang.languageSelected == 'java'">
+            <p>
+              The Java Quiz is a 20-question test designed to assess your
+              proficiency in Java programming. It covers a range of topics,
+              including data types, control flow, object-oriented programming
+              principles, and exception handling.
+            </p>
+            <p>
+              To pass the quiz, you must score at least 70%. Each question is
+              multiple-choice, providing you with a variety of options to choose
+              from. After completing the quiz, you'll receive immediate feedback
+              on your performance, helping you identify areas for improvement in
+              your Java skills.
+            </p>
+            <p>
+              Whether you're a beginner looking to test your knowledge or an
+              experienced programmer aiming to brush up on your Java skills, the
+              Java Quiz offers a challenging and informative experience. Are you
+              ready to test your Java knowledge? Take the quiz now!
+            </p>
+          </div>
+
+          
+          <button type="button" class="btn previous" (click)="confirm()">
+            START TEST
           </button>
         </div>
-        <div class="modal-body">Are you sure you want to proceed?</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Cancel
-          </button>
-          <button type="button" class="btn btn-primary" (click)="confirm()">
-            Proceed
-          </button>
-        </div>
+        <div></div>
       </div>
     </div>
   </div>

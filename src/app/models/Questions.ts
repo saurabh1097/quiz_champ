@@ -9,3 +9,8 @@ export class Questions{
     languages: string = "";
     index!: number;
 }
+
+export class AnswersClass{
+    correctAnswer!:string;
+    questionNumber!:string;
+}

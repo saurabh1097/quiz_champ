@@ -6,7 +6,8 @@
         type="button"
         class="btn btn-outline typesOfLang"
         [style.backgroundColor]="options.color"
-        (click)="redirectToQuiz(options.lang)"
+
+        (click)="openDialoge(options.lang)"
       >
         {{ options.lang | uppercase }}
       </button>

@@ -1,26 +1,25 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, InjectionToken, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {  Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-confirm-dialog',
-  template: `
-    <h1 mat-dialog-title>Confirmation</h1>
-    <div mat-dialog-content>
-      Are you sure you want to proceed?
-    </div>
-    <div mat-dialog-actions>
-      <button mat-button (click)="dialogRef.close(false)">Cancel</button>
-      <button mat-button (click)="dialogRef.close(true)">Proceed</button>
-    </div>
-  `,
+  templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.css']
 })
-export class PopupComponent {
-confirm() {
-throw new Error('Method not implemented.');
-}
+export class PopupComponent implements OnInit{
 
-constructor(public dialogRef: MatDialogRef<PopupComponent>) { }
+lang:any
+constructor(@Inject(MAT_DIALOG_DATA) private data:any,private matref:MatDialogRef<PopupComponent>,private router:Router) { }
+  ngOnInit(): void {
+    this.lang = this.data;
+  }
+
+
+confirm() {
+  this.router.navigate(['/quiz'],{queryParams: {"selectedOption":this.lang.languageSelected}});
+  this.matref.close()
+}
 
 }

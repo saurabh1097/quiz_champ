@@ -1,0 +1,23 @@
+[
+    {"questionNumber": 0, "correctAnswer": "4"},
+    {"questionNumber": 1, "correctAnswer": "1"},
+    {"questionNumber": 2, "correctAnswer": "1"},
+    {"questionNumber": 3, "correctAnswer": "1"},
+    {"questionNumber": 4, "correctAnswer": "1"},
+    {"questionNumber": 5, "correctAnswer": "1"},
+    {"questionNumber": 6, "correctAnswer": "1"},
+    {"questionNumber": 7, "correctAnswer": "1"},
+    {"questionNumber": 8, "correctAnswer": "1"},
+    {"questionNumber": 9, "correctAnswer": "4"},
+    {"questionNumber": 10, "correctAnswer": "2"},
+    {"questionNumber": 11, "correctAnswer": "2"},
+    {"questionNumber": 12, "correctAnswer": "1"},
+    {"questionNumber": 13, "correctAnswer": "1"},
+    {"questionNumber": 14, "correctAnswer": "1"},
+    {"questionNumber": 15, "correctAnswer": "2"},
+    {"questionNumber": 16, "correctAnswer": "1"},
+    {"questionNumber": 17, "correctAnswer": "2"},
+    {"questionNumber": 18, "correctAnswer": "2"},
+    {"questionNumber": 19, "correctAnswer": "3"},
+    {"questionNumber": 20,"correctAnswer" : "3"}
+]

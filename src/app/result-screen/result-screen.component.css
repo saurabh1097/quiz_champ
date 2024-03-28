@@ -1,0 +1,45 @@
+.result-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .result-item {
+    margin-bottom: 10px;
+  }
+  
+  .result-item p {
+    display: inline-block;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .result-item p:first-child {
+    width: 300px;
+    text-align: left;
+  }
+  
+  .result-item p:last-child {
+    width: 100px;
+    text-align: right;
+  }
+  
+
+  .custom-spinner-color {
+    color: #ad32fc;
+    width: 4rem; /* Adjust the size as needed */
+    height: 4rem; /* Adjust the size as needed */
+    border-width: 0.3em; /* Adjust the border width as needed */
+  }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Optional: Adjust the height to match your layout */
+  }
+  
+  
