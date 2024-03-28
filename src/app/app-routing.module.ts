@@ -6,14 +6,15 @@ import { OptionsLinkComponent } from './options-link/options-link.component';
 import { QuizScreenComponent } from './quiz-screen/quiz-screen.component';
 import { ResultScreenComponent } from './result-screen/result-screen.component';
 import { PopupComponent } from './popup/popup.component';
+import { authGuard } from './auth-guard/auth.guard';
 
 const routes: Routes = [
-  {path: 'quiz-options', component:QuizOptionsComponent},
+  {path: 'quiz-options', component:QuizOptionsComponent,title:'quiz-options'},
   {path: 'home',component:AppComponent},
   {path: 'showLink', component:OptionsLinkComponent},
-  {path:"quiz",component:QuizScreenComponent},
+  {path:"quiz",component:QuizScreenComponent,canActivate:[authGuard]},
   {path:"",component:OptionsLinkComponent},
-  {path:"result",component:ResultScreenComponent},
+  {path:"result",component:ResultScreenComponent,canActivate:[authGuard]},
   {path:"popup",component:PopupComponent}
 ];
 

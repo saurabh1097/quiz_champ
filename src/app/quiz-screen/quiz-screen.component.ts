@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import Swal from 'sweetalert2';
 import { DataShareService } from '../services/data-share.service';
+import { NavigationGuardService } from '../services/naigation-guard/navigation-guard.service';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     private router:Router,
     private dialog: MatDialog,
     private dataShare:DataShareService,
+    private navigationService:NavigationGuardService
 
   ) {}
   ngOnDestroy(): void {
@@ -110,7 +112,14 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
       this.timeOutMessage()
       this.router.navigate(["result"])
     }
-    
+    this.setNavigationHistory()
+  }
+
+  setNavigationHistory(){
+    this.navigationService.setCurrentPage("result");
+    this.navigationService.setPreviousPage("quiz");
+    console.log("current",this.navigationService.getCurrent()," previous ",this.navigationService.getPrevious());
+
   }
 
   timerCheck(isTimeOut: any) {
