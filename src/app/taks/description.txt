@@ -21,11 +21,20 @@ tasks:
     4. service is created to share the data for the results.
     5. calculate result is in the progress.
 
+29-03-2024
+tasks:
+    1. result screen is now better and working properly.
+    2. url security is implemented.
+    3. images is added for pass and fail result.
+    4. tab change and browser minimize feature is also implemented.
+    5. option screen is now have description popup.
+
 
 
 tasks for future:
-    1. quiz description before jumping on to the quiz.
+    1. quiz description before jumping on to the quiz.-->done
     2. take email before the test start
     3. send the result via mail.
     4. question circle changes color for saved, visited, yet to visit etc.
-    5. implement security on urls.
+    5. implement security on urls. -->done
+    6. user can download participation/completion certificate.
