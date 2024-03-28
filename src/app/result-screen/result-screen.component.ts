@@ -162,13 +162,11 @@ export class ResultScreenComponent implements OnInit {
     this.answered = this.saved.size;
     this.totlaQuestions = this.questions.length;
     this.finalScore = (this.correct / this.totlaQuestions) * 100;
-    if(this.finalScore < 70){
+    if(this.finalScore > 70){
       this.isPassed = true;
     }else{
       this.isPassed = false;
     }
-    console.log("ispassed ",this.isPassed);
-    
     this.finalScore = parseFloat(this.finalScore.toFixed(2));
     this.showResult()
   }
