@@ -7,6 +7,7 @@ import { PopupComponent } from '../popup/popup.component';
 import Swal from 'sweetalert2';
 import { DataShareService } from '../services/data-share.service';
 import { NavigationGuardService } from '../services/naigation-guard/navigation-guard.service';
+import { VisibilityCheckService } from '../services/visibility-check/visibility-check.service';
 
 
 @Component({
@@ -34,7 +35,8 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
     private router:Router,
     private dialog: MatDialog,
     private dataShare:DataShareService,
-    private navigationService:NavigationGuardService
+    private navigationService:NavigationGuardService,
+    private visibilityService:VisibilityCheckService
 
   ) {}
   ngOnDestroy(): void {
@@ -79,7 +81,10 @@ export class QuizScreenComponent implements OnInit, OnDestroy {
   saveAnswer() {
     if(this.optionClicked.length > 0){
       this.optionStored.set(JSON.stringify(this.questionToDisplay.index),this.optionClicked);
-      this.nextQuestion();
+      if(this.questionToDisplay.index != this.questions.length-1){
+        this.nextQuestion();
+      }
+      
     }else{
       alert("please select the option to save.")
     }

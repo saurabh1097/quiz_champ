@@ -20,6 +20,7 @@ export class ResultScreenComponent implements OnInit {
   saved: Map<string, string> = new Map<string, string>();
   langSelected: string = '';
   listOfAnswers: AnswersClass[] = [];
+  isPassed!: boolean;
   constructor(
     private dataSare: DataShareService,
     private dataFetch: FetchingService
@@ -58,92 +59,92 @@ export class ResultScreenComponent implements OnInit {
 
   calculateResult() {
     console.log("2",this.listOfAnswers);
-    this.saved = new Map([
-      [
-          "0",
-          "4"
-      ],
-      [
-          "1",
-          "4"
-      ],
-      [
-          "2",
-          "4"
-      ],
-      [
-          "3",
-          "4"
-      ],
-      [
-          "4",
-          "4"
-      ],
-      [
-          "5",
-          "4"
-      ],
-      [
-          "6",
-          "4"
-      ],
-      [
-          "7",
-          "4"
-      ],
-      [
-          "8",
-          "3"
-      ],
-      [
-          "9",
-          "2"
-      ],
-      [
-          "10",
-          "1"
-      ],
-      [
-          "11",
-          "3"
-      ],
-      [
-          "12",
-          "2"
-      ],
-      [
-          "13",
-          "2"
-      ],
-      [
-          "14",
-          "2"
-      ],
-      [
-          "15",
-          "3"
-      ],
-      [
-          "16",
-          "2"
-      ],
-      [
-          "17",
-          "3"
-      ],
-      [
-          "18",
-          "1"
-      ],
-      [
-          "19",
-          "3"
-      ],
-      [
-          "20",
-          "2"
-      ]
-  ])
+  //   this.saved = new Map([
+  //     [
+  //         "0",
+  //         "4"
+  //     ],
+  //     [
+  //         "1",
+  //         "4"
+  //     ],
+  //     [
+  //         "2",
+  //         "4"
+  //     ],
+  //     [
+  //         "3",
+  //         "4"
+  //     ],
+  //     [
+  //         "4",
+  //         "4"
+  //     ],
+  //     [
+  //         "5",
+  //         "4"
+  //     ],
+  //     [
+  //         "6",
+  //         "4"
+  //     ],
+  //     [
+  //         "7",
+  //         "4"
+  //     ],
+  //     [
+  //         "8",
+  //         "3"
+  //     ],
+  //     [
+  //         "9",
+  //         "2"
+  //     ],
+  //     [
+  //         "10",
+  //         "1"
+  //     ],
+  //     [
+  //         "11",
+  //         "3"
+  //     ],
+  //     [
+  //         "12",
+  //         "2"
+  //     ],
+  //     [
+  //         "13",
+  //         "2"
+  //     ],
+  //     [
+  //         "14",
+  //         "2"
+  //     ],
+  //     [
+  //         "15",
+  //         "3"
+  //     ],
+  //     [
+  //         "16",
+  //         "2"
+  //     ],
+  //     [
+  //         "17",
+  //         "3"
+  //     ],
+  //     [
+  //         "18",
+  //         "1"
+  //     ],
+  //     [
+  //         "19",
+  //         "3"
+  //     ],
+  //     [
+  //         "20",
+  //         "2"
+  //     ]
+  // ])
     
     for (let [key, value] of this.saved) {
       let tempQuestion = this.questions[JSON.parse(key)];
@@ -161,6 +162,13 @@ export class ResultScreenComponent implements OnInit {
     this.answered = this.saved.size;
     this.totlaQuestions = this.questions.length;
     this.finalScore = (this.correct / this.totlaQuestions) * 100;
+    if(this.finalScore < 70){
+      this.isPassed = true;
+    }else{
+      this.isPassed = false;
+    }
+    console.log("ispassed ",this.isPassed);
+    
     this.finalScore = parseFloat(this.finalScore.toFixed(2));
     this.showResult()
   }

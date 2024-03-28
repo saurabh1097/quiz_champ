@@ -1,11 +1,11 @@
-
-
-<div *ngIf="isLoading"  class="spinner-container">
-  <div class="spinner-border spinner-border-lg custom-spinner-color" role="status">
+<div *ngIf="isLoading" class="spinner-container">
+  <div
+    class="spinner-border spinner-border-lg custom-spinner-color"
+    role="status"
+  >
     <span class="sr-only"></span>
   </div>
 </div>
-
 
 <div *ngIf="!isLoading" class="result-container">
   <h2>Quiz Result</h2>
@@ -27,6 +27,16 @@
   </div>
   <div class="result-item">
     <p>Final Score:</p>
-    <p>{{ finalScore  }}%</p>
+    <p>{{ finalScore }}%</p>
+  </div>
+
+  <div *ngIf="isPassed" #pass>
+    <img src="../../assets/images/Congratulations.png" alt="" srcset="">
+  </div>
+  
+  <div *ngIf="!isPassed">
+    <img src="../../assets/images/better-luck-next-time.png" alt="" srcset="">
   </div>
 </div>
+
+
