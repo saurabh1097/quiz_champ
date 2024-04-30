@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataShareService } from '../services/data-share.service';
 import { AnswersClass, Questions } from '../models/Questions';
 import { FetchingService } from '../services/fetching.service';
+import { NavigationGuardService } from '../services/naigation-guard/navigation-guard.service';
 
 @Component({
   selector: 'app-result-screen',
   templateUrl: './result-screen.component.html',
   styleUrls: ['./result-screen.component.css'],
 })
-export class ResultScreenComponent implements OnInit {
+export class ResultScreenComponent implements OnInit,OnDestroy {
   finalScore: number = 0;
   answered: number = 0;
   correct: number = 0;
@@ -23,8 +24,20 @@ export class ResultScreenComponent implements OnInit {
   isPassed!: boolean;
   constructor(
     private dataSare: DataShareService,
-    private dataFetch: FetchingService
+    private dataFetch: FetchingService,
+    private navigationService:NavigationGuardService
   ) {}
+
+
+  ngOnDestroy(): void {
+    console.log("destroy");
+    this.navigationService.setCurrentPage("result");
+    this.navigationService.setPreviousPage("");
+    this.setNavigationHistory();
+
+  }
+
+
 
    ngOnInit() {
     this.dataSare.$languageSelected.subscribe((lang) => {
@@ -59,92 +72,7 @@ export class ResultScreenComponent implements OnInit {
 
   calculateResult() {
     console.log("2",this.listOfAnswers);
-  //   this.saved = new Map([
-  //     [
-  //         "0",
-  //         "4"
-  //     ],
-  //     [
-  //         "1",
-  //         "4"
-  //     ],
-  //     [
-  //         "2",
-  //         "4"
-  //     ],
-  //     [
-  //         "3",
-  //         "4"
-  //     ],
-  //     [
-  //         "4",
-  //         "4"
-  //     ],
-  //     [
-  //         "5",
-  //         "4"
-  //     ],
-  //     [
-  //         "6",
-  //         "4"
-  //     ],
-  //     [
-  //         "7",
-  //         "4"
-  //     ],
-  //     [
-  //         "8",
-  //         "3"
-  //     ],
-  //     [
-  //         "9",
-  //         "2"
-  //     ],
-  //     [
-  //         "10",
-  //         "1"
-  //     ],
-  //     [
-  //         "11",
-  //         "3"
-  //     ],
-  //     [
-  //         "12",
-  //         "2"
-  //     ],
-  //     [
-  //         "13",
-  //         "2"
-  //     ],
-  //     [
-  //         "14",
-  //         "2"
-  //     ],
-  //     [
-  //         "15",
-  //         "3"
-  //     ],
-  //     [
-  //         "16",
-  //         "2"
-  //     ],
-  //     [
-  //         "17",
-  //         "3"
-  //     ],
-  //     [
-  //         "18",
-  //         "1"
-  //     ],
-  //     [
-  //         "19",
-  //         "3"
-  //     ],
-  //     [
-  //         "20",
-  //         "2"
-  //     ]
-  // ])
+
     
     for (let [key, value] of this.saved) {
       let tempQuestion = this.questions[JSON.parse(key)];
@@ -162,7 +90,7 @@ export class ResultScreenComponent implements OnInit {
     this.answered = this.saved.size;
     this.totlaQuestions = this.questions.length;
     this.finalScore = (this.correct / this.totlaQuestions) * 100;
-    if(this.finalScore > 70){
+    if(this.finalScore >= 70){
       this.isPassed = true;
     }else{
       this.isPassed = false;
@@ -203,4 +131,9 @@ export class ResultScreenComponent implements OnInit {
     }, 3000); // 3000 milliseconds = 3 seconds
   }
   
+  setNavigationHistory(){
+    this.navigationService.setCurrentPage("result");
+    this.navigationService.setPreviousPage("");
+    console.log("current",this.navigationService.getCurrent()," previous ",this.navigationService.getPrevious());
+  }
 }

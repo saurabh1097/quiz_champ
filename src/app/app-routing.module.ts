@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'showLink', component:OptionsLinkComponent},
   {path:"quiz",component:QuizScreenComponent,canActivate:[authGuard]},
   {path:"",component:OptionsLinkComponent},
-  {path:"result",component:ResultScreenComponent},
+  {path:"result",component:ResultScreenComponent,canActivate:[authGuard]},
   {path:"popup",component:PopupComponent}
 ];
 
